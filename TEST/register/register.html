@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký tài khoản</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+<div class="container">
+    <h2>Create a new account</h2>
+    
+    <form action="register.php" method="POST">
+        <label>Fullname:</label>
+        <input type="text" name="full_name" required>
+
+        <label>Password:</label>
+        <input type="password" name="password" required>
+
+        <label>Phone:</label>
+        <input type="text" name="phone">
+
+        <label>Address:</label>
+        <textarea name="address"></textarea>
+
+        <button type="submit">Sign up</button>
+    </form>
+</div>
+</body>
+</html>
