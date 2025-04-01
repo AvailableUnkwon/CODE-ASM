@@ -7,23 +7,33 @@
 </head>
 <body>
 <div class="container">
-    <h2>Create a new account</h2>
-    
+    <h1>Register</h1>
     <form action="register.php" method="POST">
-        <label>Fullname:</label>
-        <input type="text" name="full_name" required>
+    
+        <label for="fullname">Full Name *</label>
+        <input type="text" id="fullname" name="fullname" required>  
 
-        <label>Password:</label>
-        <input type="password" name="password" required>
+        <label for="Phonenumber">Phone Number *</label>
+        <input type="text" id="Phonenumber" name="phonenumber" required>
 
-        <label>Phone:</label>
-        <input type="text" name="phone">
+        <label for="email">Email *</label>
+        <input type="text" id="email" name="email" required>
 
-        <label>Address:</label>
-        <textarea name="address"></textarea>
-
-        <button type="submit">Sign up</button>
+        <div class="password-table">
+            <div>
+                <label for="password">Password *</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <!-- <br>
+            <div>
+                <label for="confirm-password">Re-enter Password *</label>
+                <input type="password" id="confirm-password" required>
+            </div> -->
+        </div>
+        <button type="submit" class="submit-btn">Sign up</button>
+        <p> Already have an account? <a href="../login/login.html"> Login </a></p>
     </form>
+</div>
 </div>
 </body>
 </html>

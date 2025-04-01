@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToyWeb</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body>
+    <section class="header">
+        <div class="top-nav">
+            <a href=""><i class="fa-solid fa-truck"></i>Order tracking</a>
+            <a href="../login/login.html"><i class="fa-solid fa-user"></i>Login</a>
+            <a href="../cart/cart.html"><i class="fa-solid fa-cart-shopping"></i>Shopping cart </a>
+            <input type="search" value="Search" placeholder="Search...">
+
+            <img src="https://www.mykingdom.com.vn/cdn/shop/files/logo-254x76_1.png?v=1697473116&width=200" alt="">
+        </div>
+
+        <div class="top">
+            <ul class="top-Menu">
+                <li><a href="../main/main.html">Home</a></li>
+                <li><a href="../main/info.html">About Us</a></li>
+                <li>
+                    <a href="">Product</a>
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="#">Assembly toys</a></li>
+                            <li><a href="#">Creative toys</a></li>
+                            <li><a href="#">Vehicle toys</a></li>
+                            <li><a href="#">Simulation toys</a></li>
+                            <li><a href="#">Education toys</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="../main/trademark.html">Contact Us</a></li>
+                <li><a href="">Event</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slideshow-container">
+        <div class="slideshow">
+            <div class="slideshow fade">
+                <div class="slide"><img
+                        src="https://www.mykingdom.com.vn/cdn/shop/files/KV_ab754bae-4161-4564-9302-45a335db9371.jpg?v=1740194220&width=1200"
+                        alt=""></div>
+                <div class="slide"><img
+                        src="https://www.mykingdom.com.vn/cdn/shop/files/Banner-mua-1-tang-1-LEGO---1280x496-2802.jpg?v=1738900407&width=1200"
+                        alt=""></div>
+                <div class="slide"><img
+                        src="https://www.mykingdom.com.vn/cdn/shop/files/IMG_0379.jpg?v=1738852199&width=1200" alt="">
+                </div>
+                <div class="slide"><img
+                        src="https://www.mykingdom.com.vn/cdn/shop/files/BANNER-MKD_a51fd357-0132-4cce-8231-e4058197f28f.jpg?v=1740017433&width=1200"
+                        alt=""></div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+
+    <section class="product-section">
+        <h2>Featured Products</h2>
+        <p>Discover our latest and most popular toys for children of all ages.</p>
+        <div class="product">
+            <div class="product-items">
+                <div class="img">
+                    <img src="https://www.mykingdom.com.vn/cdn/shop/files/Untitled-1_3b675b59-e194-4d1c-832e-30c3c3754bc0.jpg?v=1734607585&width=990"
+                        alt="">
+                </div>
+                <h3 class="product-name">Robot</h3>
+                <p class="product-price">Price: 100.000đ</p>
+                <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping" onclick="addToCart()"></i></a>
+            </div>
+
+            <div class="product-items">
+                <div class="img">
+                    <img src="https://www.mykingdom.com.vn/cdn/shop/files/42165_c0c5eb40-6a79-4107-ac08-5f6ddef0990c.jpg?v=1725613270&width=990"
+                        alt="">
+                </div>
+                <h3 class="product-name">Lego</h3>
+                <p class="product-price">Price: 100.000đ</p>
+                <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping" onclick=""></i></a>
+            </div>
+
+            <div class="product-items">
+                <div class="img">
+                    <img src="https://www.mykingdom.com.vn/cdn/shop/files/GVG36.jpg?v=1715592178&width=990" alt="">
+                </div>
+                <h3 class="product-name">Car</h3>
+                <p class="product-price">Price: 250.000d</p>
+                <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping" onclick=""></i></a>
+            </div>
+
+            <div class="product-items">
+                <div class="img">
+                    <img src="https://www.mykingdom.com.vn/cdn/shop/files/Untitled-1_3b675b59-e194-4d1c-832e-30c3c3754bc0.jpg?v=1734607585&width=990"
+                        alt="">
+                </div>
+                <h3 class="product-name">Robot</h3>
+                <p class="product-price">Price: 100.000đ</p>
+                <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping" onclick="addToCart()"></i></a>
+            </div>
+
+            <div class="product-items">
+                <div class="img">
+                    <img src="https://www.mykingdom.com.vn/cdn/shop/files/42165_c0c5eb40-6a79-4107-ac08-5f6ddef0990c.jpg?v=1725613270&width=990"
+                        alt="">
+                </div>
+                <h3 class="product-name">Lego</h3>
+                <p class="product-price">Price: 100.000đ</p>
+                <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping" onclick=""></i></a>
+            </div>
+
+            <div class="product-items">
+                <div class="img">
+                    <img src="https://www.mykingdom.com.vn/cdn/shop/files/GVG36.jpg?v=1715592178&width=990" alt="">
+                </div>
+                <h3 class="product-name">Car</h3>
+                <p class="product-price">Price: 250.000d</p>
+                <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping" onclick=""></i></a>
+            </div>
+
+            <div class="product-items">
+                <div class="img">
+                    <img src="https://www.mykingdom.com.vn/cdn/shop/files/Untitled-1_3b675b59-e194-4d1c-832e-30c3c3754bc0.jpg?v=1734607585&width=990"
+                        alt="">
+                </div>
+                <h3 class="product-name">Robot</h3>
+                <p class="product-price">Price: 100.000đ</p>
+                <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping" onclick="addToCart()"></i></a>
+            </div>
+
+            <div class="product-items">
+                <div class="img">
+                    <img src="https://www.mykingdom.com.vn/cdn/shop/files/42165_c0c5eb40-6a79-4107-ac08-5f6ddef0990c.jpg?v=1725613270&width=990"
+                        alt="">
+                </div>
+                <h3 class="product-name">Lego</h3>
+                <p class="product-price">Price: 100.000đ</p>
+                <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping" onclick=""></i></a>
+            </div>
+
+            <div class="product-items">
+                <div class="img">
+                    <img src="https://www.mykingdom.com.vn/cdn/shop/files/GVG36.jpg?v=1715592178&width=990" alt="">
+                </div>
+                <h3 class="product-name">Car</h3>
+                <p class="product-price">Price: 250.000d</p>
+                <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping" onclick=""></i></a>
+            </div>
+
+            <div class="product-items">
+                <div class="img">
+                    <img src="https://www.mykingdom.com.vn/cdn/shop/files/Untitled-1_3b675b59-e194-4d1c-832e-30c3c3754bc0.jpg?v=1734607585&width=990"
+                        alt="">
+                </div>
+                <h3 class="product-name">Robot</h3>
+                <p class="product-price">Price: 100.000đ</p>
+                <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping" onclick="addToCart()"></i></a>
+            </div>
+
+            <div class="product-items">
+                <div class="img">
+                    <img src="https://www.mykingdom.com.vn/cdn/shop/files/42165_c0c5eb40-6a79-4107-ac08-5f6ddef0990c.jpg?v=1725613270&width=990"
+                        alt="">
+                </div>
+                <h3 class="product-name">Lego</h3>
+                <p class="product-price">Price: 100.000đ</p>
+                <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping" onclick=""></i></a>
+            </div>
+
+            <div class="product-items">
+                <div class="img">
+                    <img src="https://www.mykingdom.com.vn/cdn/shop/files/GVG36.jpg?v=1715592178&width=990" alt="">
+                </div>
+                <h3 class="product-name">Car</h3>
+                <p class="product-price">Price: 250.000d</p>
+                <a class="add-to-cart" href=""><i class="fa-solid fa-cart-shopping" onclick=""></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer-container">
+        <div class="footer-left">
+            <h3>Contact Information</h3>
+            <p><i class="fa-solid fa-location-dot"></i> 33–35 D4 Street, Him Lam New Urban Area, Tan Hung Ward, District 7, Ho Chi Minh City</p>
+            <p><i class="fa-solid fa-phone"></i> 19001208</p>
+            <p><i class="fa-solid fa-envelope"></i> hotro@mykingdom.com.vn</p>
+            <p><i class="fa-solid fa-calendar"></i> Monday - Satuday • 8:00 - 17:00</p>
+            <p><i class="fa-solid fa-calendar-day"></i> Sunday • 8:00 - 12:00</p>
+        </div>
+        <div class="footer-right">
+            <p>&copy; Copy right: 2025 ToyWeb. All Rights Reserved.</p>
+            <p>Contact us: support@toyweb.com | Hotline: 1800-1234</p>
+            <p>Follow us on:
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </p>
+        </div>
+    </section>
+    <script src="slide.js"></script>
+    <script src="../cart/cart.js"></script>
+</body>
+
+</html>

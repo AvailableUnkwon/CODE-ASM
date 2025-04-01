@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+    <div class="cart-container">
+        <h2>Your cart</h2>
+        <div id="cart-items">
+           
+        </div>
+        <div class="total-container">
+            <button class="clear-btn" onclick="clearCart()">Clear all</button>
+            <div class="total">Total: <strong><span id="totalPrice">0</span>đ</strong></div>
+        </div>
+        <button class="checkout-btn">Pay Now</button>
+        <button class="back" onclick="backToShop()">Go back</button>
+    </div>
+    <script src="cart.js"></script>
+</body>
+
+</html>
