@@ -1,5 +1,4 @@
 let cart_stg = JSON.parse(localStorage.getItem('cart')) || [];
-
 function saveCart() {
     localStorage.setItem('cart', JSON.stringify(cart_stg));
 }
@@ -34,7 +33,7 @@ function addToCart() {
 
     saveCart();
 
-    alert('Sản phẩm đã được thêm vào giỏ hàng!');
+    alert('Product Have been added!');
 }
 
 let buttons = document.querySelectorAll('.add-to-cart');
@@ -49,7 +48,7 @@ function renderCart() {
     cartContainer.innerHTML = "";
     for (let index = 0; index < cart_stg.length; index++) {
         let item = cart_stg[index];
-        let itemPrice = parseInt(item.price.replace(/[^0-9]/g, "")); // Parse price as an integer
+        let itemPrice = parseInt(item.price.replace(/[^0-9]/g, "")); 
         let itemTotal = itemPrice * item.quantity;
         totalPrice += itemTotal;
 
