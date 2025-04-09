@@ -5,7 +5,7 @@ require '../connect.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
-    // Kiểm tra người dùng có tồn tại hay không
+    // Check if user exists
     $sql = "SELECT user_id, user_name, password FROM users WHERE email = ?";
     $stmt = mysqli_prepare($conn, $sql);
 
@@ -18,19 +18,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_bind_result($stmt,$user_id, $db_username, $hashed_password);
             mysqli_stmt_fetch($stmt);
 
-            // Kiểm tra mật khẩu
+            // Check password
             if (password_verify($password, $hashed_password)) {
-                // Lưu thông tin vào session
+                // Save data to session
                 $_SESSION["user_id"] = $user_id;
                 $_SESSION["username"] = $db_username;
 
-                // Kiểm tra nếu là admin
+                // check admin account
                 if ($db_username === 'Admin') {
                     $_SESSION["is_admin"] = true;
-                    header("Location: ../admin/user_mgt.php"); // Chuyển hướng đến trang quản lý user
+                    header("Location: ../admin/user_mgt.php"); 
                 } else {
                     $_SESSION["is_admin"] = false;
-                    header("Location: ../main/main.html"); // Chuyển hướng đến trang chính
+                    header("Location: ../main/main.html"); 
                 }
                 exit();
             } else {

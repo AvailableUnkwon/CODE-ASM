@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-    Home PAGE
-    <button>User management</button>
-    <button>Product management</button>
+    Admin Page
+    <button><a href="../admin/user_mgt.php">User management</a></button>
+    <button><a href="../admin/product.php">Product management</a></button>
+    <br><br>
+    <button><a href="../main/main.html">Home Page</a></button>
 </body>
 </html>

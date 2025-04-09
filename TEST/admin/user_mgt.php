@@ -2,14 +2,14 @@
 session_start();
 require '../connect.php';
 
-// Kiểm tra nếu chưa đăng nhập hoặc không phải admin
+// check if user is admin
 if (!isset($_SESSION["username"]) || $_SESSION["username"] !== "Admin") {
-    echo "<p style='color:red; text-align:center;'>Bạn không có quyền truy cập trang này!</p>";
+    echo "<p style='color:red; text-align:center;'>You do not have permission to access this page!</p>";
     exit();
 }
 
 
-// Xử lý thêm & cập nhật người dùng
+// Handle adding and updating users
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['save_user'])) {
     $id = $_POST['user_id'] ?? '';
     $username = trim($_POST['username']);
@@ -17,39 +17,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['save_user'])) {
     $email = trim($_POST['email']);
 
     if ($id) {
-        // Cập nhật người dùng (Không cập nhật mật khẩu)
+        // Update User 
         $stmt = $conn->prepare("UPDATE users SET user_name=?, phone=?, email=? WHERE user_id=?");
         $stmt->bind_param("sssi", $username, $phone, $email, $id);
     } else {
-        // Thêm người dùng mới (hash mật khẩu)
+        // Add new user (password hash)
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $stmt = $conn->prepare("INSERT INTO users (user_name, password, phone, email) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $username, $password, $phone, $email);
     }
 
     if ($stmt->execute()) {
-        echo "<script>alert('Lưu thành công!'); window.location='user_mgt.php';</script>";
+        echo "<script>alert('Save successfully!'); window.location='user_mgt.php';</script>";
     } else {
-        echo "<script>alert('Lỗi: " . $stmt->error . "');</script>";
+        echo "<script>alert('Eror: " . $stmt->error . "');</script>";
     }
     $stmt->close();
 }
 
-// Xử lý xóa người dùng
+// Delete user
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $stmt = $conn->prepare("DELETE FROM users WHERE user_id=?");
     $stmt->bind_param("i", $id);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Xóa thành công!'); window.location='user_mgt.php';</script>";
+        echo "<script>alert('Delete successfully!'); window.location='user_mgt.php';</script>";
     } else {
-        echo "<script>alert('Lỗi khi xóa: " . $stmt->error . "');</script>";
+        echo "<script>alert('Eror: " . $stmt->error . "');</script>";
     }
     $stmt->close();
 }
 
-// Lấy danh sách người dùng
+// get user list
 $result = $conn->query("SELECT user_id, user_name, phone, email FROM users");
 ?>
 
@@ -58,21 +58,21 @@ $result = $conn->query("SELECT user_id, user_name, phone, email FROM users");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý Người Dùng</title>
+    <title>User Management</title>
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
 <div class="container">
-    <h2>Quản lý Người Dùng</h2>
+    <h2>User Management</h2>
 
     <!-- Form thêm / sửa người dùng -->
     <form method="POST">
         <input type="hidden" name="user_id" id="user_id">
-        <input type="text" name="username" id="username" placeholder="Tên đăng nhập" required>
-        <input type="text" name="phone" id="phone" placeholder="Số điện thoại" required>
+        <input type="text" name="username" id="username" placeholder="Username" required>
+        <input type="text" name="phone" id="phone" placeholder="Phone number" required>
         <input type="text" name="email" id="email" placeholder="Email" required>
-        <input type="password" name="password" id="password" placeholder="Mật khẩu">
+        <input type="password" name="password" id="password" placeholder="Password" required>
         <button type="submit" name="save_user" class="btn">Save</button>
     </form>
 
@@ -83,7 +83,7 @@ $result = $conn->query("SELECT user_id, user_name, phone, email FROM users");
             <th>Username</th>
             <th>Phone number</th>
             <th>Email</th>
-            <th>Hành động</th>
+            <th>Action</th>
         </tr>
         <?php while ($row = $result->fetch_assoc()): ?>
         <tr>
@@ -92,15 +92,15 @@ $result = $conn->query("SELECT user_id, user_name, phone, email FROM users");
             <td><?= $row['phone'] ?></td>
             <td><?= $row['email'] ?></td>
             <td>
-                <button class="btn edit-btn" onclick="editUser('<?= $row['user_id'] ?>', '<?= $row['user_name'] ?>', '<?= $row['phone'] ?>', '<?= $row['email'] ?>')">✏ Sửa</button>
-                <a href="?delete=<?= $row['user_id'] ?>" class="btn delete-btn" onclick="return confirm('Xác nhận xóa?');">🗑 Xóa</a>
+                <button class="btn edit-btn" onclick="editUser('<?= $row['user_id'] ?>', '<?= $row['user_name'] ?>', '<?= $row['phone'] ?>', '<?= $row['email'] ?>')">✏ Edit</button>
+                <a href="?delete=<?= $row['user_id'] ?>" class="btn delete-btn" onclick="return confirm('Confirm to delete?');">🗑 Delete</a>
             </td>
         </tr>
         <?php endwhile; ?>
     </table>
 
     <div class="buttons">
-        <a href="admin.php">⬅ Quay lại</a>
+        <a href="admin.php">Back</a>
     </div>
 </div>
 

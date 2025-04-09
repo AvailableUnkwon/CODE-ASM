@@ -1,12 +1,11 @@
-
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #d4d4d4;
+    background-color: #ee4b4b;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
 .container, .login {
@@ -20,7 +19,7 @@ body {
 
 h1 {
     margin-bottom: 20px;
-    color: #002b80;
+    color: #ff5733; /* Màu cam đậm */
     font-size: 24px;
     font-weight: bold;
 }
@@ -34,7 +33,7 @@ form {
 label {
     text-align: left;
     font-weight: bold;
-    color: #333;
+    color: #ff5733; /* Màu cam đậm */
     margin-top: 10px;
     font-size: 14px;
     display: flex;
@@ -43,19 +42,19 @@ label {
 input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ff9e80; /* Màu cam nhạt */
     border-radius: 20px;
     font-size: 14px;
     outline: none;
 }
 
 input:focus {
-    border-color: #002b80;
-    box-shadow: 0 0 5px rgba(0, 43, 128, 0.3);
+    border-color: #ff5733; /* Màu cam đậm */
+    box-shadow: 0 0 5px rgba(255, 87, 51, 0.3);
 }
 
 .submit-btn, .btnlogin {
-    background-color: #d0021b;
+    background-color: #ff6f61; /* Màu hồng cam */
     color: white;
     padding: 12px;
     border: none;
@@ -67,7 +66,7 @@ input:focus {
 }
 
 .submit-btn:hover, .btnlogin:hover {
-    background-color: #a00115;
+    background-color: #ff3d2e; /* Màu cam đậm hơn khi hover */
 }
 
 p {
@@ -76,7 +75,7 @@ p {
 }
 
 a {
-    color: #d0021b;
+    color: #ff6f61; /* Màu hồng cam */
     text-decoration: none;
     font-weight: bold;
 }
@@ -84,5 +83,3 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
-

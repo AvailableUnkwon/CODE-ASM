@@ -1,15 +1,14 @@
 body {
-    margin: 5px;
-    padding: 5px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ee4b4b; 
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
-.container {
+.container, .login {
     background-color: #fff;
     padding: 30px;
     border-radius: 12px;
@@ -20,7 +19,7 @@ body {
 
 h1 {
     margin-bottom: 20px;
-    color: #002b80;
+    color: #ff5733; 
     font-size: 24px;
     font-weight: bold;
 }
@@ -34,7 +33,7 @@ form {
 label {
     text-align: left;
     font-weight: bold;
-    color: #333;
+    color: #ff5733; 
     margin-top: 10px;
     font-size: 14px;
     display: flex;
@@ -43,19 +42,19 @@ label {
 input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ff9e80; 
     border-radius: 20px;
     font-size: 14px;
     outline: none;
 }
 
 input:focus {
-    border-color: #002b80;
-    box-shadow: 0 0 5px rgba(0, 43, 128, 0.3);
+    border-color: #ff5733; 
+    box-shadow: 0 0 5px rgba(255, 87, 51, 0.3);
 }
 
-.submit-btn {
-    background-color: #d0021b;
+.submit-btn, .btnlogin {
+    background-color: #ff6f61; 
     color: white;
     padding: 12px;
     border: none;
@@ -66,8 +65,8 @@ input:focus {
     font-weight: bold;
 }
 
-.submit-btn:hover {
-    background-color: #a00115;
+.submit-btn:hover, .btnlogin:hover {
+    background-color: #ff3d2e; 
 }
 
 p {
@@ -76,7 +75,7 @@ p {
 }
 
 a {
-    color: #d0021b;
+    color: #ff6f61; 
     text-decoration: none;
     font-weight: bold;
 }
@@ -84,5 +83,3 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
-

@@ -1,5 +1,4 @@
 <?php
-// Include Database
 require '../connect.php';
 
 //Check if form is submitted
@@ -9,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $phone = trim($_POST["phonenumber"]);
     $email = trim($_POST["email"]);
 
-    //Hash password (bật để tránh lỗi)
+    //Hash password 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     //Insert data into users table
